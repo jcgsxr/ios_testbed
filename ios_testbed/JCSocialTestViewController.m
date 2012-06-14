@@ -13,6 +13,7 @@
 @end
 
 @implementation JCSocialTestViewController
+@synthesize socialView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [socialView setAlpha:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,7 +59,13 @@
     
     if (viewCtrl)
     {
-        [[self navigationController] pushViewController:viewCtrl animated:NO];
+        //[socialView setAlpha:1];
+        //[socialView addSubview:viewCtrl.view];
+        
+        //[self.view addSubview:viewCtrl.view];
+        [self presentViewController:viewCtrl animated:YES completion:nil];
+        
+        //[[self navigationController] pushViewController:viewCtrl animated:NO];
     }
 }
 

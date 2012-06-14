@@ -11,4 +11,6 @@
 
 @interface JCSocialTestViewController : UIActivityViewController
 
+@property (weak, nonatomic) IBOutlet UIView *socialView;
+
 @end

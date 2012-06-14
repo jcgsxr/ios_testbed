@@ -45,5 +45,18 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ACFacebookClientAccessInfo</key>
+	<dict>
+		<key>ACFacebookAppIdKey</key>
+		<string>139766832763820</string>
+		<key>ACFacebookAppVersionKey</key>
+		<string>1.0</string>
+		<key>ACFacebookPermissionGroupKey</key>
+		<string>read_write</string>
+		<key>ACFacebookPermissionsKey</key>
+		<array>
+			<string>user_about_me</string>
+		</array>
+	</dict>
 </dict>
 </plist>

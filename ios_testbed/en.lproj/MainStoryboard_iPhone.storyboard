@@ -129,16 +129,26 @@
                                     <action selector="socialButtonAction:" destination="Sx8-BX-lOf" eventType="touchUpInside" id="Edg-Oz-OKV"/>
                                 </connections>
                             </button>
+                            <view translatesAutoresizingMaskIntoConstraints="NO" contentMode="scaleToFill" id="6Ms-Bo-CWy">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CP9-uy-VRz" firstAttribute="centerY" secondItem="j0J-0t-HHU" secondAttribute="centerY" type="default" id="2ro-57-eJJ"/>
                             <constraint firstItem="D1a-vd-rv5" firstAttribute="leading" secondItem="j0J-0t-HHU" secondAttribute="leading" type="default" id="AaK-L9-uCe"/>
+                            <constraint firstItem="6Ms-Bo-CWy" firstAttribute="centerY" secondItem="CP9-uy-VRz" secondAttribute="centerY" type="default" id="EiW-fz-36j"/>
+                            <constraint firstItem="6Ms-Bo-CWy" firstAttribute="leading" secondItem="j0J-0t-HHU" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="O6F-jP-Oe3"/>
                             <constraint firstItem="D1a-vd-rv5" firstAttribute="trailing" secondItem="j0J-0t-HHU" secondAttribute="trailing" type="default" id="Ouf-r0-SOP"/>
-                            <constraint firstItem="CP9-uy-VRz" firstAttribute="centerX" secondItem="D1a-vd-rv5" secondAttribute="centerX" type="default" id="jpF-WB-aj8"/>
+                            <constraint firstItem="CP9-uy-VRz" firstAttribute="centerX" secondItem="6Ms-Bo-CWy" secondAttribute="centerX" type="default" id="SR1-fw-vPp"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ms-Bo-CWy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VMU-yO-qH1"/>
+                            <constraint firstItem="6Ms-Bo-CWy" firstAttribute="top" secondItem="j0J-0t-HHU" secondAttribute="top" constant="111" id="iIr-kW-UQT"/>
+                            <constraint firstItem="6Ms-Bo-CWy" firstAttribute="centerY" secondItem="j0J-0t-HHU" secondAttribute="centerY" type="default" id="pU9-EI-bhm"/>
                             <constraint firstItem="D1a-vd-rv5" firstAttribute="top" secondItem="j0J-0t-HHU" secondAttribute="top" type="default" id="sq2-bM-Yhv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="socialView" destination="6Ms-Bo-CWy" id="WAq-oQ-7pT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppY-S5-muG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,6 +164,9 @@
         </class>
         <class className="JCSocialTestViewController" superclassName="UIActivityViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JCSocialTestViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="socialView" candidateClass="UIView"/>
+            </relationships>
         </class>
         <class className="JCViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JCViewController.h"/>
