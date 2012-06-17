@@ -42,31 +42,35 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-
-- (IBAction)socialButtonAction:(id)sender
+- (IBAction)facebookButtonAction:(id)sender
 {
     if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
         NSLog(@"Facebook Service not available");
     }
     
+    SLComposeViewController *viewCtrl = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    
+    if (viewCtrl)
+    {
+        [self presentViewController:viewCtrl animated:YES completion:nil];
+    }
+}
+
+- (IBAction)twitterButtonAction:(id)sender
+{
     if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         NSLog(@"Twitter Service not available");
     }
     
-    SLComposeViewController *viewCtrl = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+	SLComposeViewController *viewCtrl = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
     if (viewCtrl)
     {
-        //[socialView setAlpha:1];
-        //[socialView addSubview:viewCtrl.view];
-        
-        //[self.view addSubview:viewCtrl.view];
         [self presentViewController:viewCtrl animated:YES completion:nil];
-        
-        //[[self navigationController] pushViewController:viewCtrl animated:NO];
     }
 }
+
 
 @end
