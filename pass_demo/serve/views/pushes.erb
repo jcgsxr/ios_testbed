@@ -1,0 +1,33 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<body>
+  <h1>Push targets</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Device</th>
+        <th>Serial Number</th>
+        <th>Token</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @regs.each do |r| %>
+      <tr>
+        <td><%= r[0] %></td>
+        <td><%= r[1] %></td>
+        <td class=token><a href="#"><%= r[2] %></a></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <script>
+    $(".token a").click(function ()
+    {
+      var tok = $(this).text();
+      $.ajax("/push/" + tok, { type: "POST" })
+    })
+  </script>
+</body>
+</html>
