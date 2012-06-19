@@ -80,12 +80,17 @@
 				//[controller setToRecipients:[NSArray arrayWithObject:@"user@gmail.com"]];
 				[controller setSubject:@"Device IDs"];
 				
+				NSString *messageBody = nil;
 				if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForAdvertising)] &&
 					[[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)])
 				{
-					NSString *messageBody = [NSString stringWithFormat:@"Advertiser ID: %@ \n Vendor ID: %@",  [[[UIDevice currentDevice] identifierForAdvertising] UUIDString], [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
-					[controller setMessageBody:messageBody isHTML:NO];
+					messageBody = [NSString stringWithFormat:@"Advertiser ID: %@ \n Vendor ID: %@",  [[[UIDevice currentDevice] identifierForAdvertising] UUIDString], [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
 				}
+				else
+				{
+					messageBody = @"Advertiser and Vendor ID not available in this version of iOS";
+				}
+				[controller setMessageBody:messageBody isHTML:NO];
 
 				[self presentViewController:controller animated:YES completion:nil];
 			}
@@ -100,12 +105,17 @@
 			MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
 			if ([MFMessageComposeViewController canSendText] && controller)
 			{
+				NSString *messageBody = nil;
 				if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForAdvertising)] &&
 					[[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)])
 				{
-					NSString *messageBody = [NSString stringWithFormat:@"Advertiser ID: %@ \n Vendor ID: %@",  [[[UIDevice currentDevice] identifierForAdvertising] UUIDString], [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
-					[controller setBody:messageBody];
+					messageBody = [NSString stringWithFormat:@"Advertiser ID: %@ \n Vendor ID: %@",  [[[UIDevice currentDevice] identifierForAdvertising] UUIDString], [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
 				}
+				else
+				{
+					messageBody = @"Advertiser and Vendor ID not available in this version of iOS";
+				}
+				[controller setBody:messageBody];
 				
 				//controller.recipients = [NSArray arrayWithObjects:@"+919999999999", nil];
 				controller.messageComposeDelegate = self;
