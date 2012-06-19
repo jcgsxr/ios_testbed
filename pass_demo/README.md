@@ -6,10 +6,16 @@ Generate your keys.
  
 * Run the following inside the extracted dir:
  
-openssl pkcs12 -in cert.p12 -out keys/passAndKey.pem -nodes -clcerts
-openssl pkcs12 -in cert.p12 -clcerts -nokeys -out keys/certificate.pem
-openssl pkcs12 -in cert.p12 -nocerts -out keys/key.pem
- 
+openssl pkcs12 -in PassKitCertificates.p12 -out keys/certAndKey.pem -nodes -clcerts
+openssl pkcs12 -in PassKitCertificates.p12 -clcerts -nokeys -out keys/certificate.pem
+openssl pkcs12 -in PassKitCertificates.p12 -nocerts -out keys/key.pem
+
+///////////////////////// OLD AND REPLACED BUT HERE FOR REFERENCE /////////////////////////////////////////
+openssl pkcs12 -in PassKitCertificates.p12 -clcerts -nokeys -out keys/certificate.pem
+openssl pkcs12 -in PassKitCertificates.p12 -nocerts -out keys/key.pem
+openssl smime -binary -sign -signer keys/certificate.pem -inkey keys/key.pem -in payload/manifest.json -out signature -outform DER
+///////////////////////// OLD AND REPLACED BUT HERE FOR REFERENCE /////////////////////////////////////////
+
 (you should now have payload/ keys/ and serve/)
  
 * Note the password you entered for the last key.
