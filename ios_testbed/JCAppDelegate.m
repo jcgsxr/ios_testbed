@@ -10,9 +10,34 @@
 
 @implementation JCAppDelegate
 
+
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken 
+{
+	NSLog(@"APN device token: %@", deviceToken);
+	NSString *deviceTokenString = [NSString stringWithFormat:@"%@",deviceToken];
+	//	UIAlertView *deviceTokenAlert = [[UIAlertView alloc] initWithTitle:@"Device Token"
+	//																				  message:deviceTokenString
+	//																				 delegate:self
+	//																	 cancelButtonTitle:@"OK"
+	//																	 otherButtonTitles:nil];
+	
+	NSLog(@"deviceTokenString: %@", deviceTokenString);
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+	NSLog(@"yoyo1");
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+	
+	// JC: NOTE: Testing push notification to get device token.
+	[application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound];
 	
     return YES;
 }

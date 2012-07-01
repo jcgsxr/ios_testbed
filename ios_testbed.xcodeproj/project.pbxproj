@@ -27,6 +27,7 @@
 		8574077A15896762004B54A1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8574077915896762004B54A1 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8574077D15896824004B54A1 /* JCSocialTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8574077C15896824004B54A1 /* JCSocialTestViewController.m */; };
 		AB053C4F158FFC4E0063DBC9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB053C4E158FFC4E0063DBC9 /* MessageUI.framework */; };
+		AB3E285915A0113F00407596 /* JCiCloudTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3E285815A0113F00407596 /* JCiCloudTestViewController.m */; };
 		ABDA6C33158E8DC80053D1A5 /* JCPassKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA6C32158E8DC80053D1A5 /* JCPassKitViewController.m */; };
 		ABDA6C46158FF70E0053D1A5 /* JCDeviceIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA6C45158FF70E0053D1A5 /* JCDeviceIDViewController.m */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,8 @@
 		8574077B15896824004B54A1 /* JCSocialTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSocialTestViewController.h; sourceTree = "<group>"; };
 		8574077C15896824004B54A1 /* JCSocialTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSocialTestViewController.m; sourceTree = "<group>"; };
 		AB053C4E158FFC4E0063DBC9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		AB3E285715A0113F00407596 /* JCiCloudTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCiCloudTestViewController.h; sourceTree = "<group>"; };
+		AB3E285815A0113F00407596 /* JCiCloudTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCiCloudTestViewController.m; sourceTree = "<group>"; };
 		ABDA6C31158E8DC80053D1A5 /* JCPassKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCPassKitViewController.h; sourceTree = "<group>"; };
 		ABDA6C32158E8DC80053D1A5 /* JCPassKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCPassKitViewController.m; sourceTree = "<group>"; };
 		ABDA6C44158FF70E0053D1A5 /* JCDeviceIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCDeviceIDViewController.h; sourceTree = "<group>"; };
@@ -107,10 +110,6 @@
 		85740726158954E0004B54A1 = {
 			isa = PBXGroup;
 			children = (
-				AB053C4E158FFC4E0063DBC9 /* MessageUI.framework */,
-				8574077915896762004B54A1 /* Social.framework */,
-				8574077715896038004B54A1 /* CoreLocation.framework */,
-				8574077115895D84004B54A1 /* MapKit.framework */,
 				8574073B158954E0004B54A1 /* ios_testbed */,
 				8574075C158954E0004B54A1 /* ios_testbedTests */,
 				85740734158954E0004B54A1 /* Frameworks */,
@@ -130,6 +129,10 @@
 		85740734158954E0004B54A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB053C4E158FFC4E0063DBC9 /* MessageUI.framework */,
+				8574077915896762004B54A1 /* Social.framework */,
+				8574077715896038004B54A1 /* CoreLocation.framework */,
+				8574077115895D84004B54A1 /* MapKit.framework */,
 				85740735158954E0004B54A1 /* UIKit.framework */,
 				85740737158954E0004B54A1 /* Foundation.framework */,
 				85740739158954E0004B54A1 /* CoreGraphics.framework */,
@@ -156,6 +159,8 @@
 				ABDA6C32158E8DC80053D1A5 /* JCPassKitViewController.m */,
 				ABDA6C44158FF70E0053D1A5 /* JCDeviceIDViewController.h */,
 				ABDA6C45158FF70E0053D1A5 /* JCDeviceIDViewController.m */,
+				AB3E285715A0113F00407596 /* JCiCloudTestViewController.h */,
+				AB3E285815A0113F00407596 /* JCiCloudTestViewController.m */,
 			);
 			path = ios_testbed;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				8574077D15896824004B54A1 /* JCSocialTestViewController.m in Sources */,
 				ABDA6C33158E8DC80053D1A5 /* JCPassKitViewController.m in Sources */,
 				ABDA6C46158FF70E0053D1A5 /* JCDeviceIDViewController.m in Sources */,
+				AB3E285915A0113F00407596 /* JCiCloudTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +422,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios_testbed/ios_testbed-Prefix.pch";
 				INFOPLIST_FILE = "ios_testbed/ios_testbed-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -428,7 +434,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios_testbed/ios_testbed-Prefix.pch";
 				INFOPLIST_FILE = "ios_testbed/ios_testbed-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
